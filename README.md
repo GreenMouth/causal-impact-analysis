@@ -1,29 +1,38 @@
-# CausalImpact_Google
-Using Bayesian Structural Time Series (BSTS) model for time series intervention analysis
+# Causal Impact Analysis
 
-Measure impact of a time series intervention on outcome KPI (sales, clicks, etc.) using Bayesian state-space model.
-Ways to quantify attribution by intervention on measured outcome.
+Causal inference on time-series interventions using Bayesian Structural Time Series (BSTS) models.
 
-Practical Usecase:
-1. Let's say you own 2 website (A & B) which performs same in terms of #clicks
-2. You chnaged something on website A and which you expect potentially will affect #Clicks for A 
-3. But you #Clicks for website B will 'remain same' irrespective of changes made in A
-4. Website B will be a counterfactual of A post-intervention
-5. Now, using CausalImpact you can measure 'attribution' done by new feature in A
+## Overview
 
-**Note:
-BSTS model uses spike and slab Bayesian variable selection technique.
+This project estimates the causal effect of an intervention on a time series using Bayesian Structural Time Series (BSTS) modeling. By constructing a counterfactual "what would have happened" baseline, it quantifies the incremental impact of an event — for example, a marketing campaign or product change — on an observed metric.
 
+## Contents
 
-#References: 
-https://cran.r-project.org/web/packages/CausalImpact/vignettes/CausalImpact.html
-https://cran.r-project.org/web/packages/CausalImpact/CausalImpact.pdf
-https://www.youtube.com/watch?v=GTgZfCltMm8
-https://storage.googleapis.com/pub-tools-public-publication-data/pdf/41854.pdf
-https://github.com/google/CausalImpact
-https://en.wikipedia.org/wiki/Spike-and-slab_regression
-https://blog.exploratory.io/an-introduction-to-causal-impact-analysis-a57bce54078e
-https://multithreaded.stitchfix.com/blog/2016/01/13/market-watch/
-https://www.analytics-link.com/single-post/2017/11/03/Causal-Impact-Analysis-in-R-and-now-Python
-http://www.degeneratestate.org/posts/2018/Mar/24/causal-inference-with-python-part-1-potential-outcomes/
-https://github.com/ijmbarr/notes-on-causal-inference/blob/master/datagenerators.py
+| Item | Description |
+|------|-------------|
+| `CausalImpact.R` | R script running the BSTS-based causal impact analysis. |
+| `Model_Output.png` | Plot of the observed series, counterfactual prediction, and estimated effect. |
+| `Model_Summary.docx` | Written summary of the model results and interpretation. |
+
+## Requirements
+
+- R
+- The `CausalImpact` R package (built on `bsts`)
+
+Install the package in R with:
+
+```r
+install.packages("CausalImpact")
+```
+
+## Usage
+
+Run the analysis in R:
+
+```r
+source("CausalImpact.R")
+```
+
+## License
+
+No license has been specified for this repository. Please contact the author before reuse.
